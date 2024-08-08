@@ -7,11 +7,6 @@ pipeline{
         maven "maven-3"
     }
     stages{
-        stage("clean-workspace"){
-            steps{
-                cleanws
-            }
-            }
         stage("SCM-Checkout"){
             steps{
                 git branch: 'main', credentialsId: 'git', url: 'https://github.com/AslamMohammad11/PROJECT-1.git'
