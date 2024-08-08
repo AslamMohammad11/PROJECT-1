@@ -4,12 +4,12 @@ pipeline{
     }
     tools {
         jdk "java-17"
-        maven "maven3"
+        maven "maven-3"
     }
     stages{
         stage("clean-workspace"){
             steps{
-                cleanWs
+                cleanws
             }
             }
         stage("SCM-Checkout"){
