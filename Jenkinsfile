@@ -1,0 +1,21 @@
+pipeline{
+    agent{
+        label "slave-1"
+    }
+    tools {
+        jdk "java-17"
+        maven "maven3"
+    }
+    stages{
+        stage("clean-workspace"){
+            steps{
+                cleanWs
+            }
+            }
+        stage("SCM-Checkout"){
+            steps{
+                git branch: 'main', credentialsId: 'git', url: 'https://github.com/AslamMohammad11/PROJECT-1.git'
+            }
+            }
+        }
+    }
